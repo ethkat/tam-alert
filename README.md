@@ -20,3 +20,9 @@ yarn start
 ```bash
 yarn storybook
 ```
+
+## Serve (to check PWA)
+
+```bash
+yarn seve
+```
