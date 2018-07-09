@@ -5,10 +5,14 @@ import FaList from 'react-icons/lib/fa/list';
 import FaTable from 'react-icons/lib/fa/table';
 
 const FilterWrapper = styled.div`
-  width: 8%;
+  width: 100%;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
+`;
+
+const FilterContainer = styled.div`
+  margin: 0 auto;
 `;
 
 const IconListStyled = styled(FaList)`
@@ -21,12 +25,16 @@ const IconTableStyled = styled(FaTable)`
 
 const PostFilter = ({ click }) => (
   <FilterWrapper>
-    <IconListStyled
-      onClick={() => click('list')}
-    />
-    <IconTableStyled
-      onClick={() => click('grid')}
-    />
+    <FilterContainer>
+      <IconListStyled
+        size={30}
+        onClick={() => click('list')}
+      />
+      <IconTableStyled
+        size={30}
+        onClick={() => click('grid')}
+      />
+    </FilterContainer>
   </FilterWrapper>
 );
 

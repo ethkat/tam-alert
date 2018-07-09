@@ -1,9 +1,9 @@
 const config = {
   production: {
-    GQL_URL: 'https://alert-backend.herokuapp.com',
+    GQL_URL: 'https://alert-backend.herokuapp.com/graphql',
   },
   development: {
-    GQL_URL: 'http://localhost:8080/graphql',
+    GQL_URL: 'https://alert-backend.herokuapp.com/graphql',
   },
 };
 
