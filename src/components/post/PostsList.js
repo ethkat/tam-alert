@@ -1,5 +1,7 @@
 import React from 'react';
 import gql from 'graphql-tag';
+import styled from 'styled-components';
+import { reverse, sortBy } from 'lodash';
 import PropTypes from 'prop-types';
 import { propType } from 'graphql-anywhere';
 import { ListGroup } from 'reactstrap';
@@ -13,10 +15,14 @@ const fragment = gql`
   ${PostListItem.fragment}
 `;
 
+const StyledListGroup = styled(ListGroup)`
+  width: 100%
+`;
+
 const PostsList = ({ up, down, posts }) => (
-  <ListGroup>
+  <StyledListGroup>
     {
-      posts.map(post => (
+      reverse(sortBy(posts, ['trustCount'])).map(post => (
         <PostListItem
           up={up}
           key={post._id}
@@ -25,7 +31,7 @@ const PostsList = ({ up, down, posts }) => (
         />
       ))
     }
-  </ListGroup>
+  </StyledListGroup>
 );
 
 PostsList.fragment = fragment;
